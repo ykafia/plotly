@@ -18,6 +18,7 @@ exclude = [
 
 [features]
 # Adds plot save functionality to the following formats: png, jpeg, webp, svg, pdf and eps.
+system = []
 kaleido = ["plotly_kaleido"]
 plotly_ndarray = ["ndarray"]
 

@@ -10,6 +10,7 @@ use std::path::{Path, PathBuf};
 use std::process::Command;
 
 use crate::Layout;
+use crate::Trace;
 use rand_distr::Alphanumeric;
 
 const PLOTLY_JS: &str = "plotly-1.54.6.min.js";
@@ -54,11 +55,6 @@ pub enum ImageFormat {
     EPS,
 }
 
-
-/// A struct that implements `Trace` can be serialized to json format that is understood by Plotly.js.
-pub trait Trace {
-    fn serialize(&self) -> String;
-}
 
 /// Plot is a container for structs that implement the `Trace` trait. Optionally a `Layout` can
 /// also be specified. Its function is to serialize `Trace`s and the `Layout` in html format and

@@ -3,7 +3,7 @@ use crate::common::{
     Anchor, Calendar, ColorBar, ColorScale, DashType, Font, Label, Orientation, Side,
     TickFormatStop, TickMode, Title,
 };
-use crate::plot::Trace;
+use crate::pure::Trace;
 use crate::private;
 use crate::private::{to_num_or_string_wrapper, NumOrString, NumOrStringWrapper, TruthyEnum};
 use serde::Serialize;

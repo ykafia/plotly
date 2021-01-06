@@ -69,4 +69,19 @@ impl PlotData {
         json_data.push_str("}");
         json_data
     }
+    pub fn to_inline_html(&self, id : &str) -> String {
+        let template = r#"
+            <div>
+                <div id="[id]"/>
+                <script>
+                    var e = document.getElementById("[id]");
+                    var json_plot = [json];
+                    Plotly.newPlot( e, json_plot.data, json_plot.layout);
+                </script>
+            </div>
+        "#;
+        return template.replace("[id]",id).replace("[json]",self.to_json().as_str());
+        
+
+    }
 }

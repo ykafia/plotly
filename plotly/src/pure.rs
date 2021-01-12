@@ -81,7 +81,13 @@ impl PlotData {
             </div>
         "#;
         return template.replace("[id]",id).replace("[json]",self.to_json().as_str());
-        
-
+    }
+    pub fn to_js_text(&self, id : &str) -> String {
+        let template = r#"
+            var e = document.getElementById("[id]");
+            var json_plot = [json];
+            Plotly.newPlot( e, json_plot.data, json_plot.layout);
+        "#;
+        return template.replace("[id]",id).replace("[json]",self.to_json().as_str());
     }
 }
